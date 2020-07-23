@@ -1,3 +1,4 @@
+alert('js working')
 const btn = document.querySelector("button")
 const wallpaper = document.querySelector(".wallpaper")
 const loader = document.querySelector(".loader")
