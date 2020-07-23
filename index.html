@@ -5,7 +5,7 @@
 </head>
 <body>
     <div class="root">
-        <h2>Wallpaper Generator v2</h2>
+        <h2>Wallpaper Generator v3</h2>
         <div class="image-box">
             <img class="loader" src="./spinner.gif" alt="">
             <img class="wallpaper" src="https://images.unsplash.com/photo-1525877442103-5ddb2089b2bb?ixlib=rb-1.2.1&w=1000&q=80" alt="">
@@ -13,6 +13,28 @@
         <button>Generate</button>
     </div>
 
-    <script src="./script.js" />
+    <script>
+        alert('js working')
+const btn = document.querySelector("button")
+const wallpaper = document.querySelector(".wallpaper")
+const loader = document.querySelector(".loader")
+const url = "https://source.unsplash.com/random"
+
+function giveNewImageUrl() {
+    return url + "/" + Math.floor(Math.random() * 100)
+}
+
+wallpaper.addEventListener('load', function() {
+    loader.style.setProperty('display', 'none')
+    wallpaper.style.setProperty('display', 'block')
+
+})
+
+btn.addEventListener('click', function() {
+    loader.style.setProperty('display', 'block')
+    wallpaper.style.setProperty('display', 'none')
+    wallpaper.src = giveNewImageUrl()
+})
+    </script>
 </body>
 </html>
